@@ -1,0 +1,419 @@
+/*
+Theme Name: Artful Giant Theme
+Theme URI: http://www.artfulgiant.com
+Author: Kelsey Jackson
+Author URI: http://www.artfulgiant.com
+Description: This is the custom theme I developed for my site
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: responsive, mobile-first
+Text Domain: artfulgianttheme
+
+This theme, like WordPress, is licensed under the GPL.
+*/
+$h-font: 'Oswald', sans-serif;
+$p-font: 'Open Sans', sans-serif;
+* {
+	box-sizing: border-box;
+	font-family: $p-font;
+}
+
+
+@mixin content_styles {
+	//background: #444;
+	border-radius: 7px;
+	padding: 7px;
+	margin-top: 5px;
+}
+
+@mixin title_styles {
+	background: url('images/slash_it.png') #000;
+	color: #fff;
+	text-align: center;
+	font-size: 2.4em;
+	font-size: 24px;
+	padding: 5px;
+}
+
+@mixin title_styles-2 {
+	//background: url('../img/slash_it.png') #000;
+	color: #000;
+	text-align: center;
+	font-size: 1.8em;
+	font-size: 18px;
+	padding: 5px;
+	border-bottom: 1px dotted #000;
+}
+@mixin title_styles-3 {
+	//background: url('../img/slash_it.png') #000;
+	color: #000;
+	text-align: center;
+	font-size: 3.5em;
+	font-size: 35px;
+	padding: 5px;
+	border-bottom: 1px dotted #000;
+}
+
+@mixin title_styles-4 {
+	//background: url('../img/slash_it.png') #000;
+	color: #000;
+	font-size: 1.8em;
+	font-size: 18px;
+	padding: 5px;	
+}
+
+body {
+	background: #000;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+ font-family: $h-font;
+ font-weight: 400;
+}
+
+p {
+	font-family: $p-font;
+	font-weight: 400;
+}
+	
+	#wrapper {
+		background: rgba(255, 255, 255, 0.6);
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+	div.lower-bg {
+		background: url('images/body-bg.png') no-repeat fixed left 190px, url('images/graphy.png');
+		
+	}
+	#wrapper.low {
+		
+	}
+		header {
+			min-height: 70px;
+			max-height: 190px;
+			background: #000;
+			color: #fff;
+			top: 0;
+			@media only screen and (min-width: 641px) {
+			position: fixed;
+			z-index: 20;
+			
+		}
+			left: 0;		
+			&.row {
+				max-width: 100%;
+			}
+			div.logo {
+				text-align: center;
+				a {
+					display: inline-block;
+					margin: 0 auto;
+					img {
+						margin-top: 20px;
+						width: 180px;
+						@media only screen and (min-width: 1025px) {
+						width: 250px;
+						transition: margin-top 400ms, width 200ms;
+						&.smaller {
+							margin-top: 10px;
+							width: 150px;
+						}
+						}
+					}		
+				}
+			}
+
+			nav {
+				ul {
+					text-align: center;
+					li {
+						display: inline-block;
+						padding: 10px;
+						border-radius: 15px;
+						a {
+							color: #fff;
+						}
+						&:first-child {
+							margin-right: 50px;
+						}
+					}
+				}
+			}
+
+		}
+		section {
+			@media only screen and (min-width: 40.063em) {
+			}
+			&.attention {
+				height: 250px;
+				background: url('images/attn-bg.jpg') no-repeat fixed left -850px #ccc;
+				text-align: center;
+				@media only screen and (min-width: 641px) {
+				margin-top: 135px;
+			}
+				@media only screen and (min-width: 1025px) {
+				margin-top: 190px;
+			}
+				h1{
+					line-height: 150px;
+				}
+			}
+			&.row {
+				div.main-body {
+					div.main-content {
+						article {
+							&.latest-work, &.latest-post{
+								@include content_styles;
+								h1 {
+									@include title_styles;
+								}
+				div.row {
+					article {
+						
+					}
+				}
+				h2 {
+					&.single-post {
+						@include title_styles-3;
+					}
+				}
+				p.author {
+					font-size: 10px;
+				}
+			}
+			&.latest-posts{
+				@include content_styles;
+			}
+			h1 {
+					@include title_styles;
+				}
+				div.row {
+					article {
+						h2 {
+							@include title_styles-4;
+						}
+
+						div.work-test {
+							position: relative;
+							&.crop-height {
+							  /* max-width: 1200px; /* img src width (if known) */
+							  max-height: 320px;
+							  overflow: hidden;
+							  min-height: 320px;
+							  @media only screen and (min-width: 20.063em) {
+							  	margin-bottom: 2%;
+							  }
+							}
+							div.work-words{
+								position: absolute;
+								width: 100%;
+								h2 {
+									background: rgba(0, 0, 0, 0.8);
+									color: #fff;				
+									padding: 7px 0px 7px 10px;
+									position: relative;
+									z-index: 10;
+									// top: 225px;	
+									left: 2%;
+									width: 85%;
+									font-size: 2em;
+									font-size: 20px;
+									text-align: left;
+									@media only screen and (min-width: 1025px) {
+										padding: 5px 15px 5px 10px;
+										// top: 225px;
+										// left: 5px;
+										font-size: 1.8em;
+										font-size: 18px;
+										// width: auto;
+									}
+								}
+							}
+							@media only screen and (min-width: 1025px) {	
+								width: 296px;
+	    						height: 296px;
+	   							overflow: hidden;
+								img {
+									&.scale {
+									  /* corrects inline gap in enclosing div */
+									  display: block;
+									  max-width: 100%;
+									  /* just in case, to force correct aspect ratio */
+									  height: auto !important;
+									  width: auto\9; /* ie8+9 */
+									  /* lt ie8 */
+									  -ms-interpolation-mode: bicubic;
+									  margin-top: 0px;
+									  opacity: 0.7;
+									  transition: opacity 600ms;
+ 
+									}
+									&.scale:hover {
+									  
+									  opacity: 1;
+ 
+									}
+								}
+							}
+							@media only screen and (min-width: 42.375em) and (max-width: 64.000em) {
+								img {
+									&.scale {
+									  margin-top: 0px;
+									}
+								}
+							}
+						}
+					
+
+					}
+				}
+			}
+					}
+				}
+			}
+			
+		}
+
+		div.sidebar{
+			article {
+				&.sidebar-widget-1 {
+
+				@include content_styles;
+			
+				}
+				h1 {
+					@include title_styles;
+				}
+				&.sidebar-widget-2 {
+
+				@include content_styles;
+			
+				}
+				h1 {
+					@include title_styles;
+				}
+			}
+		}
+
+		footer {
+			&.row{
+			div.footer-help {
+				div.row {
+					section {
+						&.footer-widget-1 {
+							@include content_styles;
+							h1 {
+					@include title_styles;
+				}
+						}
+						&.footer-widget-2 {
+							@include content_styles;
+							h1 {
+					@include title_styles;
+				}
+						}
+						&.footer-widget-3 {
+							@include content_styles;
+							h1 {
+					@include title_styles;
+				}
+						}
+					}
+				}
+			}
+		}
+		div.legal {
+			text-align: center;
+			@include content_styles;
+			padding-bottom: 25px;
+
+		}
+		}
+
+	// article.latest-posts {
+	// 	ul.row {
+	// 		li {
+	// 			float: left;
+	// 		}
+	// 	}
+	// }
+.medium-4 {
+    width: 100%; }
+
+  
+
+  .medium-8 {
+    width: 100%; }
+		@media only screen and (min-width: 59.063em) {
+			.medium-1 {
+    width: 8.33333%; }
+
+  .medium-2 {
+    width: 16.66667%; }
+
+  .medium-3 {
+    width: 25%; }
+
+  .medium-4 {
+    width: 33.33333%; }
+
+  .medium-5 {
+    width: 41.66667%; }
+
+  .medium-6 {
+    width: 50%; }
+
+  .medium-7 {
+    width: 58.33333%; }
+
+  .medium-8 {
+    width: 66.66667%; }
+
+  .medium-9 {
+    width: 75%; }
+
+  .medium-10 {
+    width: 83.33333%; }
+
+  .medium-11 {
+    width: 91.66667%; }
+
+  .medium-12 {
+    width: 100%; }
+		}
+p {
+	&.author {
+		ul {
+			&.post-categories {
+				li {
+					a {
+						color: #000;
+						font-size: 10px;
+					}
+				}
+				margin: 0;
+			}
+		}
+	}
+}	
+
+@media only screen and (min-width: 64.000em) {
+footer div div.row section.medium-6,
+  footer div div.row section.medium-12 {
+  width: 33.33333%;
+  }
+}
+a {
+	&.overlay {
+		 opacity: 0.4;
+	}
+
+	&.overlay:hover {
+		 opacity: 1;
+	}
+}
